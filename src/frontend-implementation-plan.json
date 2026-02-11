@@ -1,0 +1,159 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Romantic multi-slide website with opening message and 2D-to-3D drawing game",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add a full-page opening slide that shows the exact title text and a clear continue control.",
+      "acceptanceCriteria": [
+        "On first load, the user sees a full-page opening slide.",
+        "The opening slide contains the exact text \"My beautiful Wifeyyy\" (same capitalization and spelling).",
+        "The opening slide provides an obvious way to continue to the next slide (e.g., button, arrow, or click/tap prompt)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/romance/OpeningSlide.tsx",
+          "operation": "create",
+          "description": "Create the opening full-viewport slide UI that prominently renders the exact title text \"My beautiful Wifeyyy\" and exposes an obvious continue affordance (e.g., button/arrow/click prompt). Use shadcn-ui (e.g., Button) to keep controls consistent; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/romance/RomanticSlidesExperience.tsx",
+          "operation": "create",
+          "description": "Create the top-level slides experience controller that initially shows OpeningSlide and advances to the next slide on user interaction. Use shadcn-ui (e.g., Button) for navigation controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the RomanticSlidesExperience into the app render so the opening slide is the first thing visible on initial load."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement a story-style multi-slide carousel with at least 5 romantic English text slides and forward/back navigation.",
+      "acceptanceCriteria": [
+        "There are multiple (at least 5) romantic text slides in addition to the opening slide.",
+        "Users can navigate forward/backward between slides via on-screen controls.",
+        "Slide navigation works on desktop and mobile screen sizes.",
+        "Each slide displays one or more romantic lines with clear readability (sufficient contrast, consistent typography)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/romance/RomanticTextSlides.ts",
+          "operation": "create",
+          "description": "Add a curated list of at least 5 romantic English text slides (content only) to drive the carousel UI."
+        },
+        {
+          "path": "frontend/src/components/romance/RomanticCarousel.tsx",
+          "operation": "create",
+          "description": "Implement the carousel/story UI that renders one romantic slide at a time and provides next/prev on-screen controls (desktop + touch). Use shadcn-ui components (e.g., Card/Button) for consistent typography and controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/romance/RomanticSlidesExperience.tsx",
+          "operation": "modify",
+          "description": "Integrate RomanticCarousel after the opening slide and include backward/forward navigation across all post-opening slides (including the final game slide)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create a 2D-to-3D drawing mini-game on the final slide with convert, rotate/zoom, and reset controls.",
+      "acceptanceCriteria": [
+        "The last slide includes a 2D drawing area where the user can draw a closed shape (mouse and touch supported).",
+        "A clear action (e.g., \"Convert to 3D\") generates a 3D model from the drawn 2D shape.",
+        "The generated 3D figure is visible in the UI and can be rotated (drag to orbit) and zoomed (or have simple preset camera controls).",
+        "The user can reset/clear the drawing and generate a new 3D figure without reloading the page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/game2d3d/DrawingPad2D.tsx",
+          "operation": "create",
+          "description": "Create a 2D drawing surface (SVG or canvas) supporting mouse and touch input, capturing strokes and detecting/closing a shape (with a user-friendly close/finish interaction)."
+        },
+        {
+          "path": "frontend/src/components/game2d3d/shapeToMesh.ts",
+          "operation": "create",
+          "description": "Implement client-side conversion from the captured 2D closed shape into a simple 3D representation (e.g., extrusion of the polygon outline into a mesh) suitable for rendering."
+        },
+        {
+          "path": "frontend/src/components/game2d3d/ThreeDViewer.tsx",
+          "operation": "create",
+          "description": "Render the generated 3D figure on the page and provide interaction for rotate/orbit (drag) and zoom (wheel/pinch or simple controls). If using any UI controls, use shadcn-ui (e.g., Button) for reset/presets; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/romance/FinalGameSlide.tsx",
+          "operation": "create",
+          "description": "Compose the final slide that includes the DrawingPad2D, a clear \"Convert to 3D\" action, the 3D viewer, and reset/clear actions so the user can regenerate without reloading. Use shadcn-ui Buttons for actions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/romance/RomanticSlidesExperience.tsx",
+          "operation": "modify",
+          "description": "Add FinalGameSlide as the last slide in the sequence and ensure navigation reaches it while keeping the game state local to the slide (resettable)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a cohesive romantic theme (non-blue/purple primary palette) with consistent typography, backgrounds, spacing, and slide transitions across the experience.",
+      "acceptanceCriteria": [
+        "All slides share a consistent design system (matching fonts, button styles, spacing).",
+        "Transitions between slides feel intentional (e.g., fade/slide) and match the theme.",
+        "Primary palette is not blue/purple; theme reads clearly as romantic and elegant."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Adjust global theme tokens/variables and base styles to establish a romantic palette (avoid blue/purple as primary), consistent typography, and readable contrast across slides."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme (as needed) with romantic color aliases and simple transition/animation helpers (e.g., fade/slide) to support consistent slide transitions."
+        },
+        {
+          "path": "frontend/src/components/romance/RomanticSlidesExperience.tsx",
+          "operation": "modify",
+          "description": "Apply consistent layout, spacing, and slide transition behavior (e.g., fade/slide animations) across opening, text slides, and final game slide; ensure responsive behavior for mobile and desktop."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add required generated images under frontend/public/assets/generated and use them as visible background/decoration in the UI.",
+      "acceptanceCriteria": [
+        "Generated images exist at frontend/public/assets/generated with the exact filenames specified in imageRequirements.required.",
+        "At least one generated image is visibly used in the opening slide or overall background design.",
+        "Images are loaded directly as static assets (not via backend endpoints)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/romantic-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated static background image asset with the exact required filename."
+        },
+        {
+          "path": "frontend/public/assets/generated/heart-floral-motif.dim_1024x1024.png",
+          "operation": "create",
+          "description": "Add the generated decorative motif asset with the exact required filename."
+        },
+        {
+          "path": "frontend/public/assets/generated/romantic-icons.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated UI icons asset with the exact required filename."
+        },
+        {
+          "path": "frontend/src/components/romance/OpeningSlide.tsx",
+          "operation": "modify",
+          "description": "Use frontend/public/assets/generated/romantic-bg.dim_1920x1080.png as a visible background and incorporate frontend/public/assets/generated/heart-floral-motif.dim_1024x1024.png as a decorative overlay consistent with the romantic theme."
+        },
+        {
+          "path": "frontend/src/components/romance/RomanticCarousel.tsx",
+          "operation": "modify",
+          "description": "Use frontend/public/assets/generated/romantic-icons.dim_512x512.png for next/prev navigation affordances (e.g., as decorative icons on controls) while keeping text accessible and readable. If any controls use shadcn-ui (e.g., Button), verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

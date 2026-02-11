@@ -1,0 +1,112 @@
+{
+  "kind": "build_request",
+  "title": "Romantic multi-slide website with opening message and 2D-to-3D drawing game",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create an opening/landing slide that prominently displays the exact title text: \"My beautiful Wifeyyy\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create A Website With Opening Page Writen \"My beautiful Wifeyyy\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "On first load, the user sees a full-page opening slide.",
+        "The opening slide contains the exact text \"My beautiful Wifeyyy\" (same capitalization and spelling).",
+        "The opening slide provides an obvious way to continue to the next slide (e.g., button, arrow, or click/tap prompt)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a multi-slide experience (carousel/story-style) after the opening slide, with multiple slides containing romantic and beautiful lines in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "And it should hai multiple Slide With romantic And beautiful Lines written...."
+        ]
+      },
+      "acceptanceCriteria": [
+        "There are multiple (at least 5) romantic text slides in addition to the opening slide.",
+        "Users can navigate forward/backward between slides via on-screen controls.",
+        "Slide navigation works on desktop and mobile screen sizes.",
+        "Each slide displays one or more romantic lines with clear readability (sufficient contrast, consistent typography)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a final slide that contains a mini-game: the user draws a 2D shape, and the app converts it into a corresponding 3D figure rendered on the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "And On last slide add a Game in which User draw a 2d shape and it will change it into 3d figure"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The last slide includes a 2D drawing area where the user can draw a closed shape (mouse and touch supported).",
+        "A clear action (e.g., \"Convert to 3D\") generates a 3D model from the drawn 2D shape.",
+        "The generated 3D figure is visible in the UI and can be rotated (drag to orbit) and zoomed (or have simple preset camera controls).",
+        "The user can reset/clear the drawing and generate a new 3D figure without reloading the page."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a cohesive, romantic visual theme across all slides (colors, typography, spacing, backgrounds, and transitions) with a distinct style that is consistent throughout the site (avoid blue/purple as the primary palette).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All slides share a consistent design system (matching fonts, button styles, spacing).",
+        "Transitions between slides feel intentional (e.g., fade/slide) and match the theme.",
+        "Primary palette is not blue/purple; theme reads clearly as romantic and elegant."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add the required generated images as static assets under frontend/public/assets/generated and use them in the UI as background/decoration consistent with the romantic theme.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist at frontend/public/assets/generated with the exact filenames specified in imageRequirements.required.",
+        "At least one generated image is visibly used in the opening slide or overall background design.",
+        "Images are loaded directly as static assets (not via backend endpoints)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/components/ui (compose these components instead).",
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts or frontend/src/hooks/useActor.ts or frontend/src/main.tsx (immutable paths).",
+    "Do not introduce external databases or third-party authentication; keep the app self-contained using the provided template stack."
+  ],
+  "nonGoals": [
+    "User accounts, login, or Internet Identity integration.",
+    "Saving or sharing drawings/models to other users.",
+    "Real-time multiplayer features or chat.",
+    "Importing external 3D models from third-party services."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Romantic abstract background with soft warm gradients and subtle bokeh lights (romantic-bg.dim_1920x1080.png)",
+      "Delicate line-art heart and floral motif, transparent background (heart-floral-motif.dim_1024x1024.png)",
+      "Small set of minimal romantic UI icons (arrow/next/prev) in a cohesive style, transparent background (romantic-icons.dim_512x512.png)"
+    ],
+    "edits": []
+  }
+}

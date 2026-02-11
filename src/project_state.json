@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Website with an opening page saying \"My beautiful Wifeyyy\", followed by multiple romantic slides, ending with an interactive mini-game where the user draws a 2D shape that is converted into a 3D figure.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Romantic abstract background with soft warm gradients and subtle bokeh lights (romantic-bg.dim_1920x1080.png)\n- Delicate line-art heart and floral motif, transparent background (heart-floral-motif.dim_1024x1024.png)\n- Small set of minimal romantic UI icons (arrow/next/prev) in a cohesive style, transparent background (romantic-icons.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-an-opening-landing-slide-that-prominently-displays-the-exact-title-text-my-beautiful-wifeyyy",
+      "title": "Create an opening/landing slide that prominently displays the exact title text: \"My beautiful Wifeyyy\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-multi-slide-experience-carousel-story-style-after-the-opening-slide-with-multiple-slides-containing-romantic-and-beautiful-lines-in-english",
+      "title": "Implement a multi-slide experience (carousel/story-style) after the opening slide, with multiple slides containing romantic and beautiful lines in English.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-final-slide-that-contains-a-mini-game-the-user-draws-a-2d-shape-and-the-app-converts-it-into-a-corresponding-3d-figure-rendered-on-the-page",
+      "title": "Add a final slide that contains a mini-game: the user draws a 2D shape, and the app converts it into a corresponding 3D figure rendered on the page.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-romantic-visual-theme-across-all-slides-colors-typography-spacing-backgrounds-and-transitions-with-a-distinct-style-that-is-consistent-throughout-the-site-avoid-blue-purple-as-the-primary-palette",
+      "title": "Apply a cohesive, romantic visual theme across all slides (colors, typography, spacing, backgrounds, and transitions) with a distinct style that is consistent throughout the site (avoid blue/purple as the primary palette).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-as-static-assets-under-frontend-public-assets-generated-and-use-them-in-the-ui-as-background-decoration-consistent-with-the-romantic-theme",
+      "title": "Add the required generated images as static assets under frontend/public/assets/generated and use them in the UI as background/decoration consistent with the romantic theme.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create opening page with title text \"My beautiful Wifeyyy\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add multiple romantic slideshow sections with beautiful lines/text",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add final-slide game: user draws a 2D shape and it transforms into a 3D figure",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Romantic multi-slide website with opening message and 2D-to-3D drawing game",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

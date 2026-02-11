@@ -1,0 +1,14 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that renders the RomanticSlidesExperience component.",
+  "frontend/src/components/romance/OpeningSlide.tsx": "Full-screen opening slide displaying \"My beautiful Wifeyyy\" with romantic background, decorative motifs, and a continue button.",
+  "frontend/src/components/romance/RomanticTextSlides.ts": "Data file containing 7 romantic text slides with heartfelt messages.",
+  "frontend/src/components/romance/RomanticCarousel.tsx": "Carousel component that displays romantic text slides one at a time with navigation controls and progress indicators.",
+  "frontend/src/components/romance/FinalGameSlide.tsx": "Final slide containing the 2D-to-3D drawing game with drawing pad, 3D viewer, and reset functionality.",
+  "frontend/src/components/romance/RomanticSlidesExperience.tsx": "Top-level controller managing navigation between opening slide, carousel, and game views.",
+  "frontend/src/components/game2d3d/DrawingPad2D.tsx": "Interactive 2D canvas component supporting mouse and touch drawing with convert and clear actions.",
+  "frontend/src/components/game2d3d/shapeToMesh.ts": "Utility function that converts 2D point arrays into extruded 3D Three.js meshes.",
+  "frontend/src/components/game2d3d/ThreeDViewer.tsx": "3D viewer component using React Three Fiber to render and display extruded shapes with orbit controls.",
+  "frontend/src/index.css": "Global styles with romantic OKLCH color palette (rose, coral, peach tones), custom animations, and typography.",
+  "frontend/tailwind.config.js": "Tailwind configuration with romantic color tokens, custom font families (Playfair Display, Crimson Text), and extended theme.",
+  "frontend/src/hooks/useQueries.ts": "Empty hooks file as all functionality is client-side with no backend queries needed."
+}
