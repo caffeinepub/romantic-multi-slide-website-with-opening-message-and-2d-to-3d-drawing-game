@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no backend logic.",
+  "feature_evidence.json": "Feature report mapping implemented features to files, components, and test IDs.",
+  "frontend-file-summaries.txt": "List of prewritten summaries for many frontend files in the project.",
+  "frontend/index.css": "Tailwind base file defining a romantic color theme and global styles.",
+  "frontend/index.html": "HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/src/App.tsx": "App root that renders the RomanticSlidesExperience component.",
+  "frontend/src/components/game2d3d/DrawingPad2D.tsx": "Interactive 2D drawing canvas that captures points and triggers shape conversion.",
+  "frontend/src/components/game2d3d/shapeToMesh.ts": "Utility converting 2D points into a normalized, extruded Three.js mesh.",
+  "frontend/src/components/game2d3d/ThreeDViewer.tsx": "Three.js viewer that renders an extruded 3D mesh from drawn points.",
+  "frontend/src/components/romance/FinalGameSlide.tsx": "Slide combining the drawing pad and 3D viewer with navigation and reset controls.",
+  "frontend/src/components/romance/OpeningSlide.tsx": "Full-screen romantic opening slide displaying the title and a continue button.",
+  "frontend/src/components/romance/RomanticCarousel.tsx": "Displays a romantic text carousel with navigation and transitions to the game after the final slide.",
+  "frontend/src/components/romance/RomanticSlidesExperience.tsx": "Controls the flow between the opening slide, the romantic carousel, and the final game slide.",
+  "frontend/src/components/romance/RomanticTextSlides.ts": "Defines the RomanticSlide type and provides an array of romantic text slides.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor tied to the user's Internet Identity, refetching dependent queries on identity change.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity authentication context, handling login, logout, and stored identity restoration.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file indicating no backend query methods are used.",
+  "frontend/src/index.css": "Configures global Tailwind styles and defines custom romantic-themed colors, animations, and utilities.",
+  "frontend/src/main.tsx": "Initializes the React app, wrapping it with query and identity providers and loading global styles.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending colors, fonts, animations, and enabling plugins for the romantic theme.",
+  "project_state.json": "Describes the project’s state, requirements, features, and pending feature requests for the romantic slideshow and mini‑game app."
+}
